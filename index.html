@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Conflict Styles Assessment</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<!-- Theme toggle  -->
+<button id="theme-toggle"
+        class="theme-fab"
+        type="button"
+        role="switch"
+        aria-checked="false"
+        aria-label="Toggle light and dark mode">
+  <span class="theme-fab__track" aria-hidden="true">
+    <span class="theme-fab__thumb" aria-hidden="true"></span>
+  </span>
+  <span class="theme-fab__text" id="theme-toggle-text">Dark</span>
+</button>
+
+<!-- Header -->
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Conflict Styles Assessment</h1>
+      <p class="subhead">
+        Choose the statement that sounds most like what you typically do.
+        There are no right or wrong answers.
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Start screen -->
+    <section id="screen-start" class="card">
+      <h2>Before you begin</h2>
+      <ul class="bullets">
+        <li>30 questions</li>
+        <li>Pick <strong>one</strong> option per question</li>
+      </ul>
+
+      <div class="actions">
+        <button id="btn-start" class="btn primary">Start</button>
+      </div>
+    </section>
+
+<!-- Quiz screen -->
+    <section id="screen-quiz" class="card hidden" aria-live="polite">
+      <div class="quiz-top">
+        <div>
+          <div class="label">Question</div>
+          <div class="qmeta">
+            <span id="qnum">1</span><span class="muted">/</span><span id="qtotal">30</span>
+          </div>
+        </div>
+
+        <div class="progress-wrap" aria-label="Progress">
+          <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill" style="width:0%"></div>
+          </div>
+          <div class="progress-text"><span id="progress-pct">0</span>%</div>
+        </div>
+      </div>
+
+      <h2 id="qtitle" class="qtitle">Question text</h2>
+
+      <form id="qform" class="choices" autocomplete="off">
+        <label class="choice">
+          <input type="radio" name="choice" value="A" />
+          <span id="choiceA">Choice A</span>
+        </label>
+
+        <label class="choice">
+          <input type="radio" name="choice" value="B" />
+          <span id="choiceB">Choice B</span>
+        </label>
+      </form>
+
+      <div class="actions split">
+        <button id="btn-back" class="btn">Back</button>
+        <div class="right-actions">
+          <button id="btn-reset" class="btn ghost" type="button">Reset</button>
+          <button id="btn-next" class="btn primary" type="button">Next</button>
+        </div>
+      </div>
+
+      <p id="validation" class="validation hidden">Please select one option to continue.</p>
+    </section>
+
+<!-- Results screen -->
+    <section id="screen-results" class="card hidden" aria-live="polite">
+      <div class="results-head">
+        <h2>Your Results</h2>
+        <button id="btn-restart" class="btn">Retake</button>
+      </div>
+
+      <div id="results-grid" class="results-grid"></div>
+
+      <hr class="sep" />
+
+      <textarea id="copy-area" class="hidden" aria-hidden="true"></textarea>
+    </section>
+  </main>
+
+  <!-- Persistent disclaimer -->
+  <footer class="site-footer">
+    <div class="container">
+        <small>
+            This site does not collect or store personal data.
+            <br />
+            Adapted for educational use from the Thomas–Kilmann conflict styles framework.
+            Not affiliated with or endorsed by USIP or CPP, Inc.
+        </small>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
